@@ -81,7 +81,7 @@ if [ ! -e "/u01/app/oracle/initialized.id" ] ; then
 	fi
 
 	echo "Setting db_create_file_dest param..."
-	if ! echo "ALTER SYSTEM SET db_create_file_dest = '$ORACLE_DATA';" | sqlplus - s SYSTEM/oracle; then
+	if ! echo "ALTER SYSTEM SET db_create_file_dest = '$ORACLE_DATA';" | sqlplus -s SYSTEM/oracle; then
 		echo "error setting db_create_file_dest param"
 		exit 1
 	fi
